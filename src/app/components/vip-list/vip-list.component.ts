@@ -20,6 +20,7 @@ export class VipListComponent implements OnInit {
   readVip(){
     this.apiService.getVips().subscribe((data) => {
      this.Vip = data;
+     console.log(this.Vip)
     })    
   }
 

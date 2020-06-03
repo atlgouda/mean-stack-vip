@@ -1,6 +1,13 @@
-<nav>
-  <a routerLinkActive="active" routerLink="/vips-list">View Vips</a>
-  <a routerLinkActive="active" routerLink="/create-vip">Add Vip</a>
-</nav>
-
+<div class="header" style = "background-color: #85cdca">
+  <h1 style="padding-top: 10px; margin-top:0 !important">{{title}}</h1>
+    <nav class="links" style="padding-bottom: 30px">
+     <a routerLink="/vips-list">All VIPs</a>
+     <a routerLink="/create-vip">Add Vip</a>
+     <a routerLink="ath/athlete">Athletes</a>
+     <a routerLink="act/actor">Actors</a>
+     <a routerLink="bus/business">Business</a>
+     <a routerLink="mus/musician">Musicians</a>
+     <a routerLink="lea/leader">Political Leaders</a>
+    </nav>
+</div>
 <router-outlet></router-outlet>

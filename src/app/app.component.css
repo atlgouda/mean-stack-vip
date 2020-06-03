@@ -1,0 +1,66 @@
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+    text-align: center;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  .links {
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 800px;
+      margin: 0 auto;
+  }
+  nav a:visited, a:link {
+    color: #334953;
+  }
+  nav a:hover {
+    color: #039be5;
+    background-color: #cfd8dc;
+  }
+  nav a.active {
+    color: #039be5;
+  }
+  body, input[type="text"], button {
+    color: #333;
+    font-family: Cambria, Georgia;
+  }
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .vipList {
+      display: flex;
+      justify-content: center;
+
+  }
+
+  .page{
+      padding-left: 0 !important
+  }
+
+  /* .header {
+    background-image: linear-gradient(#85cdca, #68829E), url('https://i.imgur.com/fCR5wCf.jpg');
+    background-color: #85cdca;
+    opacity: 0.5;
+    background-size: cover;
+    background-blend-mode: screen;
+    background: rgba(133, 205, 202, 0.3)
+    
+  } */

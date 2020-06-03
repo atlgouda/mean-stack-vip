@@ -16,6 +16,7 @@ export class VipEditComponent implements OnInit {
   editForm: FormGroup;
   vipData: Vip[];
   VipProfile: any = ['Athletes', 'Actors', 'Business', 'Musicians', 'Political Leaders']
+  Vip: any = [];
 
   constructor(
     public fb: FormBuilder,
@@ -28,6 +29,8 @@ export class VipEditComponent implements OnInit {
     this.updateVip();
     let id = this.actRoute.snapshot.paramMap.get('id');
     this.getVip(id);
+    this.getVipById(id);
+
     this.editForm = this.fb.group({
       name: ['', [Validators.required]],
       occupation: ['', [Validators.required]],
@@ -36,7 +39,11 @@ export class VipEditComponent implements OnInit {
       reason: ['', [Validators.required]],
       yt: ['', [Validators.required]]
     })
+    // console.log(this.editForm.get('yt'))
+   
+
   }
+   
 
   // Choose options with select-dropdown
   // updateProfile(e) {
@@ -50,6 +57,7 @@ export class VipEditComponent implements OnInit {
     return this.editForm.controls;
   }
 
+
   getVip(id) {
     this.apiService.getVip(id).subscribe(data => {
       this.editForm.setValue({
@@ -61,6 +69,14 @@ export class VipEditComponent implements OnInit {
         yt: data['yt'],
       });
     });
+
+  }
+
+  getVipById(id) {
+    this.apiService.getVip(id).subscribe(data => {
+      this.Vip = data;
+      console.log(this.Vip.name)
+    })
   }
 
   updateVip() {
