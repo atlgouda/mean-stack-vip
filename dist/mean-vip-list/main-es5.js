@@ -1505,7 +1505,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http;
         this.httpClient = _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"];
-        this.baseUri = '/api';
+        this.baseUri = 'vips';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/json');
       } // Create
 
