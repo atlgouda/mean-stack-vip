@@ -1,3 +1,3 @@
 module.exports = {
-    db: 'mongodb://localhost:27017/meandb'
+    db: 'mongodb+srv://gouda:gouda@vip-list-app-wakwx.mongodb.net/vip-list-app?retryWrites=true&w=majority'
   };
