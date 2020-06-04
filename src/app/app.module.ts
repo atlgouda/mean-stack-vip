@@ -8,7 +8,7 @@ import { VipEditComponent } from './components/vip-edit/vip-edit.component';
 import { VipListComponent } from './components/vip-list/vip-list.component';
 import { ApiService } from './service/api.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { VipCardComponent } from './components/vip-card/vip-card.component';
+
 
 
 @NgModule({
@@ -17,7 +17,6 @@ import { VipCardComponent } from './components/vip-card/vip-card.component';
     VipCreateComponent,
     VipEditComponent,
     VipListComponent,
-    VipCardComponent
   ],
   imports: [
     BrowserModule,

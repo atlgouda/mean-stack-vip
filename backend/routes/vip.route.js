@@ -56,16 +56,15 @@ vipRoute.route('/update/:id').put((req, res, next) => {
 
 // Delete vip
 vipRoute.route('/delete/:id').delete((req, res, next) => {
-    Vip.findOneAndRemove(req.params.id, (error, data) => {
-      if (error) {
-        return next(error);
-      } else {
-        res.status(200).json({
-          msg: data
-        })
-      }
-    })
+  Vip.findOneAndRemove(req.params.id, (error, data) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.status(200).json({
+        msg: data
+      })
+    }
   })
-  
-  module.exports = vipRoute;
-  
+})
+
+module.exports = vipRoute;

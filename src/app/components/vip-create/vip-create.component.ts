@@ -9,17 +9,17 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
   styleUrls: ['./vip-create.component.css']
 })
 
-export class VipCreateComponent implements OnInit {  
+export class VipCreateComponent implements OnInit {
   submitted = false;
   vipForm: FormGroup;
-  VipProfile:any = ['Athletes', 'Actors', 'Business', 'Musicians', 'Political Leaders']
-  
+  VipProfile: any = ['Athletes', 'Actors', 'Business', 'Musicians', 'Political Leaders']
+
   constructor(
     public fb: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
     private apiService: ApiService
-  ) { 
+  ) {
     this.mainForm();
   }
 
@@ -44,7 +44,7 @@ export class VipCreateComponent implements OnInit {
   // }
 
   // Getter to access form control
-  get myForm(){
+  get myForm() {
     return this.vipForm.controls;
   }
 

@@ -1,70 +1,70 @@
 
-<div id="{{Vip?.type}}" class="cardRow" style="display: flex; justify-content: center; height: 85vh; background-color: #CCCCCC; padding-top: 50px">
-
-  <div class="card" style="padding-top: 15px; padding-left: 20px">
-      <div class="photo" style="background:url({{Vip?.yt}})"></div>    
-      <div class="name">{{Vip?.name}}<BR><span style="color:yellow;font-size:10px;line-height:10px;">{{Vip?.reason}}</span></div>
-      <div class="name2">{{Vip?.detail}}</div>
-  </div>
-</div>
-
-
-<div class="row justify-content-center">
-    <div class="col-md-4 register-vip">
-      <!-- form card register -->
-      <div class="card card-outline-secondary">
-        <div class="card-header">
-          <h3 class="mb-0">Edit Vip</h3>
-        </div>
-        <div class="card-body">
-          <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
- 
-            <div class="form-group">
-              <label for="inputName">Name</label>
-              <input class="form-control" type="text" formControlName="name">
-              <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
-                Name is required.
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputOccupation3">Occupation Category</label>
-              <input class="form-control" type="text" formControlName="occupation">
-              <!-- error -->
-              <div class="invalid-feedback" *ngIf="submitted && myForm.occupation.errors?.required">
-                Enter Occupation Category.
-              </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail3">Team or Profession</label>
-                <input class="form-control" type="text" formControlName="detail">
-                <!-- error -->
-                <div class="invalid-feedback" *ngIf="submitted && myForm.detail.errors?.required">
-                  Enter team or profession.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail3">Accomplishment</label>
-                <input class="form-control" type="text" formControlName="reason">
-                <!-- error -->
-                <div class="invalid-feedback" *ngIf="submitted && myForm.reason.errors?.required">
-                  Enter VIP's accomplishment.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail3">Image/gif URL</label>
-                <input class="form-control" type="text" formControlName="yt">
-                <!-- error -->
-                <div class="invalid-feedback" *ngIf="submitted && myForm.yt.errors?.required">
-                  Enter image/gif URL.
-                </div>
-            </div>
-
- 
-            <div class="form-group">
-              <button class="btn btn-success btn-lg btn-block" type="submit">Update</button>
-            </div>
-          </form>
-        </div>
-      </div><!-- form  -->
+<div id="{{Vip?.type}}" class="cardRow" style="height: 100vh; background-color: #CCCCCC; padding-top: 20px">
+  <div style="display: flex; justify-content: center">
+    <div id="vip-card" class="card" style="padding-top: 10px; padding-left: 10px">
+        <div class="photo" style="background:url({{Vip?.yt}})"></div>    
+        <div class="name">{{Vip?.name}}<BR><span style="color:yellow;font-size:10px;line-height:10px;">{{Vip?.reason}}</span></div>
+        <div class="name2">{{Vip?.detail}}</div>
     </div>
   </div>
+
+  <div class="row justify-content-center">
+      <div class="col-md-4 register-vip">
+        <!-- form card register -->
+        <div class="card card-outline-secondary">
+          <div class="card-header">
+            <h5 class="mb-0">Edit Vip</h5>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  
+              <div class="form-group">
+                <label for="inputName">Name</label>
+                <input class="form-control" type="text" formControlName="name">
+                <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+                  Name is required.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputOccupation3">Occupation Category</label>
+                <input class="form-control" type="text" formControlName="occupation">
+                <!-- error -->
+                <div class="invalid-feedback" *ngIf="submitted && myForm.occupation.errors?.required">
+                  Enter Occupation Category.
+                </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputEmail3">Team or Profession</label>
+                  <input class="form-control" type="text" formControlName="detail">
+                  <!-- error -->
+                  <div class="invalid-feedback" *ngIf="submitted && myForm.detail.errors?.required">
+                    Enter team or profession.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputEmail3">Accomplishment</label>
+                  <input class="form-control" type="text" formControlName="reason">
+                  <!-- error -->
+                  <div class="invalid-feedback" *ngIf="submitted && myForm.reason.errors?.required">
+                    Enter VIP's accomplishment.
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="inputEmail3">Image/gif URL</label>
+                  <input class="form-control" type="text" formControlName="yt">
+                  <!-- error -->
+                  <div class="invalid-feedback" *ngIf="submitted && myForm.yt.errors?.required">
+                    Enter image/gif URL.
+                  </div>
+              </div>
+
+  
+              <div class="form-group">
+                <button class="btn btn-success btn-md btn-block" type="submit">Update</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

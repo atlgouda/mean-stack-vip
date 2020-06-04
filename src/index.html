@@ -19,6 +19,14 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://i.imgur.com/pviqKkM.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+function showOne(id) {
+    $('.hide').show();
+    $('.hide').not('.' + id).hide();
+    console.log("hide " + id)
+}
+  </script>
 </head>
 <body>
   <app-root></app-root>

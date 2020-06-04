@@ -24,7 +24,7 @@ h1 {
       display:flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      max-width: 800px;
+      max-width: 400px;
       margin: 0 auto;
   }
   nav a:visited, a:link {
@@ -54,13 +54,3 @@ h1 {
   .page{
       padding-left: 0 !important
   }
-
-  /* .header {
-    background-image: linear-gradient(#85cdca, #68829E), url('https://i.imgur.com/fCR5wCf.jpg');
-    background-color: #85cdca;
-    opacity: 0.5;
-    background-size: cover;
-    background-blend-mode: screen;
-    background: rgba(133, 205, 202, 0.3)
-    
-  } */
