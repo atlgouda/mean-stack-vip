@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +10,14 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 
 export class ApiService {
   httpClient = HttpClient
-  baseUri:string = 'vips';
+  baseUrl = environment.baseUrl
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
   // Create
   createVip(data): Observable<any> {
-    let url = `${this.baseUri}/create`;
+    let url = `${this.baseUrl}/create`;
     return this.http.post(url, data)
       .pipe(
         catchError(this.errorMgmt)
@@ -25,12 +26,12 @@ export class ApiService {
 
   // Get all vips
   getVips() {
-    return this.http.get(`${this.baseUri}`);
+    return this.http.get(`${this.baseUrl}`);
   }
 
   // Get vip
   getVip(id): Observable<any> {
-    let url = `${this.baseUri}/read/${id}`;
+    let url = `${this.baseUrl}/read/${id}`;
     return this.http.get(url, {headers: this.headers}).pipe(
       map((res: Response) => {
         return res || {}
@@ -42,7 +43,7 @@ export class ApiService {
 
   // Update vip
   updateVip(id, data): Observable<any> {
-    let url = `${this.baseUri}/update/${id}`;
+    let url = `${this.baseUrl}/update/${id}`;
     return this.http.put(url, data, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     )
@@ -50,7 +51,7 @@ export class ApiService {
 
   // Delete vip
   deleteVip(id): Observable<any> {
-    let url = `${this.baseUri}/delete/${id}`;
+    let url = `${this.baseUrl}/delete/${id}`;
     return this.http.delete(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     )
