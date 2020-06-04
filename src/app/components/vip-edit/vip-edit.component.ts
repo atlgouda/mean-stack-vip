@@ -1,4 +1,4 @@
-import { Vip } from './../../model/Vip';
+import { Vip } from '../../model/vip';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ApiService } from './../../service/api.service';
