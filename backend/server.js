@@ -31,7 +31,7 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
-app.use(express.static('build'));
+app.use(express.static('src'));
 app.get('*', function (req, res) {
    res.sendFile('index.html');
  });
