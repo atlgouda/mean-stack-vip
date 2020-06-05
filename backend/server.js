@@ -33,7 +33,7 @@ app.get('/*', function(req, res) {
    res.sendFile(path.join(__dirname + '../dist/mean-vip-list/index.html'));
 })
 
-app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
+// app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
 
 
