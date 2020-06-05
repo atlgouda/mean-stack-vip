@@ -52,10 +52,10 @@ const server = app.listen(port, () => {
 //    })
 // })
 
-// Find 404 and hand over to error handler
-app.use((req, res, next) => {
-   next(createError(404));
-});
+// // Find 404 and hand over to error handler
+// app.use((req, res, next) => {
+//    next(createError(404));
+// });
 
 
 // error handler
