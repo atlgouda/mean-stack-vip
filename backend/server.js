@@ -29,11 +29,13 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/mean-vip-list')));
+app.get('/*', function(req, res) {
+   res.sendFile(path.join(__dirname + '/dist/mean-vip-list/index.html'));
+})
+
 app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
-app.get('*', function (req, res) {
-   res.sendFile(path.join(__dirname, '../src', 'index.html'));
-});
+
 
 // if (process.env.NODE_ENV === "production") {
 //    app.use(express.static("build"));
