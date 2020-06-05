@@ -32,8 +32,8 @@ app.use(express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
 app.get('*', function (req, res) {
-   res.sendFile('index.html', path.resolve(__dirname, '../dist/mean-vip-list'));
- });
+   res.sendFile(__dirname + '/index.html');
+});
 
 // if (process.env.NODE_ENV === "production") {
 //    app.use(express.static("build"));
