@@ -31,18 +31,23 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
+app.use(express.static('build'));
+app.get('*', function (req, res) {
+   res.sendFile('index.html');
+ });
 
-if (process.env.NODE_ENV === "production") {
-   app.use(express.static("build"));
-   app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-    });
-  }
+// if (process.env.NODE_ENV === "production") {
+//    app.use(express.static("build"));
+//    app.get("*", (req, res) => {
+//         res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+//     });
+//   }
 
 // Create port
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
+  
 })
 //get User
 // app.get('/test', function (req, res) {
