@@ -34,7 +34,7 @@ console.log(__dirname)
 //    res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
 // })
 app.get('/*', function(req, res) {
-   res.sendFile(path.join(__dirname, 'database/db'));
+   res.sendFile(path.join(__dirname, 'database/db.js'));
 })
 
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
