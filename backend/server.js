@@ -30,9 +30,9 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../dist/mean-vip-list')));
 console.log(__dirname)
-app.get('/*', function(req, res) {
-   res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
-})
+// app.get('/*', function(req, res) {
+//    res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
+// })
 
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
