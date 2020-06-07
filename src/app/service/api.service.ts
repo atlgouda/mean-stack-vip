@@ -32,6 +32,7 @@ export class ApiService {
   // Get vip
   getVip(id): Observable<any> {
     let url = `${this.baseUrl}/read/${id}`;
+
     return this.http.get(url, {headers: this.headers}).pipe(
       map((res: Response) => {
         return res || {}
@@ -51,6 +52,8 @@ export class ApiService {
 
   // Delete vip
   deleteVip(id): Observable<any> {
+    console.log('id')
+    console.log(id)
     let url = `${this.baseUrl}/delete/${id}`;
     return this.http.delete(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
