@@ -39,7 +39,6 @@ export class VipEditComponent implements OnInit {
       reason: ['', [Validators.required]],
       yt: ['', [Validators.required]]
     })
-    // console.log(this.editForm.get('yt'))
    
 
   }
@@ -90,14 +89,6 @@ export class VipEditComponent implements OnInit {
     })
   }
 
-  // removeVip(vip, index) {
-  //   if(window.confirm('Are you sure?')) {
-  //       this.apiService.deleteVip(vip._id).subscribe((data) => {
-  //         this.Vip.splice(index, 1);
-  //       }
-  //     )    
-  //   }
-  // }
 
   onSubmit() {
     this.submitted = true;

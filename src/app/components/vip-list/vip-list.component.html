@@ -19,23 +19,15 @@
       <table class="table table-bordered" *ngIf="Vip.length > 0">
         <thead class="table-success">
           <tr>
-            <!-- <th scope="col">Vip ID</th> -->
             <th scope="col">Name</th>
-            <!-- <th scope="col">Occupation Category</th> -->
             <th scope="col">Team or Profession</th>
-            <!-- <th scope="col">Accomplishment</th> -->
-            <!-- <th scope="col">Image/Gif URL</th> -->
             <th scope="col center">Update</th>
           </tr>
         </thead>
         <tbody style="background-color:#EEEEEE">
           <tr *ngFor="let vip of Vip, let i = index" class="{{vip.occupation}} hide">
-            <!-- <th scope="row">{{vip._id}}</th> -->
             <td>{{vip.name}}</td>
-            <!-- <td>{{vip.occupation}}</td> -->
             <td>{{vip.detail}}</td>
-            <!-- <td>{{vip.reason}}</td> -->
-            <!-- <td>{{vip.yt}}</td> -->
             <td class="text-center edit-block">
               <span class="edit" [routerLink]="['/edit-vip/', vip._id]">
                 <button type="button" class="btn btn-success btn-sm">View</button>
