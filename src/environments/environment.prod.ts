@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'https://atlanta-vips.herokuapp.com/'
+  baseUrl: 'https://api.heroku.com/apps/atlanta-vips/'
 };
