@@ -29,7 +29,7 @@
           </tr>
         </thead>
         <tbody style="background-color:#EEEEEE">
-          <tr *ngFor="let vip of Vip; let i = index" class="{{vip.occupation}} hide">
+          <tr *ngFor="let vip of Vip" class="{{vip.occupation}} hide">
             <!-- <th scope="row">{{vip._id}}</th> -->
             <td>{{vip.name}}</td>
             <!-- <td>{{vip.occupation}}</td> -->
@@ -40,7 +40,7 @@
               <span class="edit" [routerLink]="['/edit-vip/', vip._id]">
                 <button type="button" class="btn btn-success btn-sm">View</button>
               </span>
-              <span class="delete" (click)="removeVip(vip, i)">
+              <span class="delete" (click)="removeVip(vip)">
                 <button type="button" class="btn btn-danger btn-sm">Delete</button>
               </span>
             </td>
