@@ -53,8 +53,6 @@ export class ApiService {
 
   // Delete vip
   deleteVip(id): Observable<any> {
-    console.log('id')
-    console.log(id)
     let url = `${this.baseUrl}/delete/${id}`;
     return this.http.delete(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
