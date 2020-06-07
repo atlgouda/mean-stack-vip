@@ -1198,7 +1198,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function VipListComponent_table_16_tr_10_Template(rf, ctx) {
       if (rf & 1) {
-        var _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
 
@@ -1229,14 +1229,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 20);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VipListComponent_table_16_tr_10_Template_span_click_9_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5);
 
           var vip_r3 = ctx.$implicit;
-          var i_r4 = ctx.index;
 
-          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
 
-          return ctx_r5.removeVip(vip_r3, i_r4);
+          return ctx_r4.removeVip(vip_r3);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 21);
@@ -1317,7 +1316,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.Vip);
       }
-    }
+    } // import { ConsoleReporter } from 'jasmine';
+
 
     var VipListComponent = /*#__PURE__*/function () {
       function VipListComponent(apiService) {
@@ -1343,12 +1343,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "removeVip",
-        value: function removeVip(vip, index) {
-          var _this6 = this;
-
+        value: function removeVip(vip) {
           if (window.confirm('Are you sure?')) {
             this.apiService.deleteVip(vip._id).subscribe(function (data) {
-              _this6.Vip.splice(index, 1);
+              // const indx = this.Vip.findIndex(v => v._id === vip._id);
+              // this.Vip.splice(indx, 1);
+              // console.log('indx')
+              // console.log(indx)
+              console.log('vip');
+              console.log(vip); // console.log('vip._id')
+              // console.log(vip._id)
             });
           }
         }
@@ -1552,6 +1556,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "deleteVip",
         value: function deleteVip(id) {
+          console.log('id');
+          console.log(id);
           var url = "".concat(this.baseUrl, "/delete/").concat(id);
           return this.http["delete"](url, {
             headers: this.headers

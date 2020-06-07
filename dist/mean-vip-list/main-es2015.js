@@ -630,7 +630,7 @@ function VipListComponent_p_2_Template(rf, ctx) { if (rf & 1) {
 } }
 const _c0 = function (a1) { return ["/edit-vip/", a1]; };
 function VipListComponent_table_16_tr_10_Template(rf, ctx) { if (rf & 1) {
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -645,7 +645,7 @@ function VipListComponent_table_16_tr_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VipListComponent_table_16_tr_10_Template_span_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r6); const vip_r3 = ctx.$implicit; const i_r4 = ctx.index; const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r5.removeVip(vip_r3, i_r4); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VipListComponent_table_16_tr_10_Template_span_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vip_r3 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r4.removeVip(vip_r3); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 21);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -686,6 +686,7 @@ function VipListComponent_table_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.Vip);
 } }
+// import { ConsoleReporter } from 'jasmine';
 class VipListComponent {
     constructor(apiService) {
         this.apiService = apiService;
@@ -699,10 +700,17 @@ class VipListComponent {
             console.log(this.Vip);
         });
     }
-    removeVip(vip, index) {
+    removeVip(vip) {
         if (window.confirm('Are you sure?')) {
             this.apiService.deleteVip(vip._id).subscribe((data) => {
-                this.Vip.splice(index, 1);
+                // const indx = this.Vip.findIndex(v => v._id === vip._id);
+                // this.Vip.splice(indx, 1);
+                // console.log('indx')
+                // console.log(indx)
+                console.log('vip');
+                console.log(vip);
+                // console.log('vip._id')
+                // console.log(vip._id)
             });
         }
     }
@@ -806,6 +814,8 @@ class ApiService {
     }
     // Delete vip
     deleteVip(id) {
+        console.log('id');
+        console.log(id);
         let url = `${this.baseUrl}/delete/${id}`;
         return this.http.delete(url, { headers: this.headers }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.errorMgmt));
     }
