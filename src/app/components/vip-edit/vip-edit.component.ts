@@ -90,6 +90,24 @@ export class VipEditComponent implements OnInit {
     })
   }
 
+  removeVip(vip, index) {
+    if(window.confirm('Are you sure?')) {
+        this.apiService.deleteVip(vip).subscribe((data) => {
+          const indx = this.Vip.findIndex(v => v._id === vip._id);
+          console.log('indx')
+          console.log(indx)
+          // this.Vip.splice(index, 1);
+          // console.log('indx')
+          // console.log(indx)
+          console.log('vip')
+          console.log(vip)
+          // console.log('vip._id')
+          // console.log(vip._id)
+        }
+      )    
+    }
+  }
+
   onSubmit() {
     this.submitted = true;
     if (!this.editForm.valid) {

@@ -9,17 +9,8 @@ let Vip = require('../models/Vip');
 vipRoute.route('/create').post((req, res, next) => {
   Vip.create(req.body, (error, data) => {
     if (error) {
-      // console.log("errordata")
-      // console.log(data)
-      // console.log("res.json(data)")
-      // console.log(res.json(data))
       return next(error)
-
     } else {
-      // console.log("data")
-      // console.log(data)
-      // console.log("res.json(data)")
-      // console.log(res.json(data))
       res.json(data)
     }
   })
@@ -29,16 +20,8 @@ vipRoute.route('/create').post((req, res, next) => {
 vipRoute.route('/').get((req, res) => {
   Vip.find((error, data) => {
     if (error) {
-      // console.log("errordata")
-      // console.log(data)
-      // console.log("res.json(data)")
-      // console.log(res.json(data))
       return next(error)
     } else {
-      // console.log("data")
-      // console.log(data)
-      // console.log("res.json(data)")
-      // console.log(res.json(data))
       res.json(data)
     }
   })

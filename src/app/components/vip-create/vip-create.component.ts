@@ -12,7 +12,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class VipCreateComponent implements OnInit {
   submitted = false;
   vipForm: FormGroup;
-  VipProfile: any = ['Athletes', 'Actors', 'Business', 'Musicians', 'Political Leaders']
+  VipProfile:any = ['Athletes', 'Actors', 'Business', 'Musicians', 'Political Leaders']
 
   constructor(
     public fb: FormBuilder,
@@ -56,7 +56,7 @@ export class VipCreateComponent implements OnInit {
       this.apiService.createVip(this.vipForm.value).subscribe(
         (res) => {
           console.log('Vip successfully created!')
-          this.ngZone.run(() => this.router.navigateByUrl('/vips-list'))
+          this.ngZone.run(() => this.router.navigateByUrl('/'))
         }, (error) => {
           console.log(error);
         });

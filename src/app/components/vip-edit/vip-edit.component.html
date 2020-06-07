@@ -62,9 +62,17 @@
               <div class="form-group">
                 <button class="btn btn-success btn-md btn-block" type="submit">Update</button>
               </div>
+              <span id="delete_button" class="delete" (click)="removeVip(vip, i)">
+                  <button class="btn btn-danger btn-md btn-block" type="button">Delete</button>
+                </span>
             </form>
           </div>
         </div>
       </div>
     </div>
 </div>
+<script type="text/javascript">
+    document.getElementById("delete_button").onclick = function () {
+        location.href = "/";
+    };
+</script>

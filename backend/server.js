@@ -51,20 +51,7 @@ const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
   
 })
-//get User
-// app.get('/test', function (req, res) {
-//    Vip.findOne({ id: '5ed6982ff9f3d862688954c3' }, function (err, vip) {
-//       if (err) {
-//          res.send(err);
-//       } else {
-//          if (!vip) {
-//             res.send ('vip does not exist');
-//          } else {
-//             res.send(vip)
-//          }
-//       }
-//    })
-// })
+
 
 // // Find 404 and hand over to error handler
 app.use((req, res, next) => {
