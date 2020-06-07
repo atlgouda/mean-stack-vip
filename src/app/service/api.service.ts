@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment'
 
 export class ApiService {
   httpClient = HttpClient
-  baseUrl = environment.baseUrl
+  // baseUrl = environment.baseUrl
+  baseUrl:string = "http://localhost:4000/api"
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -26,7 +27,8 @@ export class ApiService {
 
   // Get all vips
   getVips() {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}`,
+    {responseType: 'text'});
   }
 
   // Get vip

@@ -630,7 +630,6 @@ function VipListComponent_p_2_Template(rf, ctx) { if (rf & 1) {
 } }
 const _c0 = function (a1) { return ["/edit-vip/", a1]; };
 function VipListComponent_table_16_tr_10_Template(rf, ctx) { if (rf & 1) {
-    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -642,12 +641,6 @@ function VipListComponent_table_16_tr_10_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 19);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "View");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function VipListComponent_table_16_tr_10_Template_span_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r5); const vip_r3 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r4.removeVip(vip_r3); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 21);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Delete");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -678,7 +671,7 @@ function VipListComponent_table_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "tbody", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, VipListComponent_table_16_tr_10_Template, 12, 8, "tr", 16);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, VipListComponent_table_16_tr_10_Template, 9, 8, "tr", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
@@ -716,7 +709,7 @@ class VipListComponent {
     }
 }
 VipListComponent.ɵfac = function VipListComponent_Factory(t) { return new (t || VipListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_api_service__WEBPACK_IMPORTED_MODULE_1__["ApiService"])); };
-VipListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VipListComponent, selectors: [["app-vip-list"]], decls: 17, vars: 2, consts: [[2, "height", "150vh", "background-color", "#CCCCCC", "padding-top", "20px"], [1, "container"], ["class", "no-data text-center", 4, "ngIf"], ["role", "group", "aria-label", "Basic example", 1, "btn-group", 2, "margin-bottom", "10px", "display", "flex", "flex-wrap", "wrap"], ["type", "button", "onclick", "showOne('business')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('musician')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('leader')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('actor')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('athlete')", 1, "btn", "btn-secondary"], ["class", "table table-bordered", 4, "ngIf"], [1, "no-data", "text-center"], [1, "table", "table-bordered"], [1, "table-success"], ["scope", "col"], ["scope", "col center"], [2, "background-color", "#EEEEEE"], [3, "class", 4, "ngFor", "ngForOf"], [1, "text-center", "edit-block"], [1, "edit", 3, "routerLink"], ["type", "button", 1, "btn", "btn-success", "btn-sm"], [1, "delete", 3, "click"], ["type", "button", 1, "btn", "btn-danger", "btn-sm"]], template: function VipListComponent_Template(rf, ctx) { if (rf & 1) {
+VipListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VipListComponent, selectors: [["app-vip-list"]], decls: 17, vars: 2, consts: [[2, "height", "150vh", "background-color", "#CCCCCC", "padding-top", "20px"], [1, "container"], ["class", "no-data text-center", 4, "ngIf"], ["role", "group", "aria-label", "Basic example", 1, "btn-group", 2, "margin-bottom", "10px", "display", "flex", "flex-wrap", "wrap"], ["type", "button", "onclick", "showOne('business')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('musician')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('leader')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('actor')", 1, "btn", "btn-secondary"], ["type", "button", "onclick", "showOne('athlete')", 1, "btn", "btn-secondary"], ["class", "table table-bordered", 4, "ngIf"], [1, "no-data", "text-center"], [1, "table", "table-bordered"], [1, "table-success"], ["scope", "col"], ["scope", "col center"], [2, "background-color", "#EEEEEE"], [3, "class", 4, "ngFor", "ngForOf"], [1, "text-center", "edit-block"], [1, "edit", 3, "routerLink"], ["type", "button", 1, "btn", "btn-success", "btn-sm"]], template: function VipListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, VipListComponent_p_2_Template, 2, 0, "p", 2);

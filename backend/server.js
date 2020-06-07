@@ -22,7 +22,6 @@ mongoose.connect(dbConfig.db, {
 // Setting up port with express js
 const vipRoute = require('../backend/routes/vip.route')
 const app = express();
-app.use(cors()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: false
@@ -30,10 +29,10 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../dist/mean-vip-list')));
 console.log(__dirname)
-app.get('/*', function(req, res) {
-   res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
-})
-
+// app.get('/*', function(req, res) {
+//    res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
+// })
+app.use('/', express.static(path.join(__dirname, '../dist/mean-vip-list')));
 
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
@@ -68,9 +67,9 @@ const server = app.listen(port, () => {
 // })
 
 // // Find 404 and hand over to error handler
-// app.use((req, res, next) => {
-//    next(createError(404));
-// });
+app.use((req, res, next) => {
+   next(createError(404));
+});
 
 
 // error handler
