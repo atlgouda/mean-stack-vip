@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:4000/api'
-  // baseUrl: 'mongodb://heroku_z5kh62p6:jkptud4be0oe0vblka0fu4vg8f@ds241875.mlab.com:41875/heroku_z5kh62p6'
+  // baseUrl: ''
 };
 
 /*

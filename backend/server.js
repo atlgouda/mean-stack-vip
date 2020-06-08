@@ -9,16 +9,21 @@ let express = require('express'),
 
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.db, {
-   useNewUrlParser: true
-}).then(() => {
-      console.log(dbConfig.db)
-      console.log('Database sucessfully connected')
-   },
-   error => {
-      console.log('Database could not connected: ' + error)
-   }
-)
+// mongoose.connect(dbConfig.db, {
+//    useNewUrlParser: true
+// }).then(() => {
+//       console.log("verify dbConfig.db " + dbConfig.db)
+//       console.log('Database sucessfully connected')
+//    },
+//    error => {
+//       console.log('Database could not connected: ' + error)
+//    }
+// )
+mongoose.connect(process.env.MONGODB_URI || dbConfig.db, { useNewUrlParser: true })
+        .then(connect => console.log('connected to mongodb..'))
+        .catch(e => console.log('could not connect to mongodb', e))
+
+module.exports = {mongoose}
 
 // Setting up port with express js
 const vipRoute = require('../backend/routes/vip.route')

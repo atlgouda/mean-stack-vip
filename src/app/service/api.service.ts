@@ -17,7 +17,7 @@ export class ApiService {
   // Create
   createVip(data): Observable<any> {
     let url = `${this.baseUrl}/create`;
-    return this.http.post(url, data)
+    return this.http.post('/create', data)
       .pipe(
         catchError(this.errorMgmt)
       )
@@ -25,14 +25,14 @@ export class ApiService {
 
   // Get all vips
   getVips() {
-    return this.http.get(`${this.baseUrl}`,
+    return this.http.get('/',
     {responseType: 'text'});
   }
 
   // Get vip
   getVip(id): Observable<any> {
     let url = `${this.baseUrl}/read/${id}`;
-    return this.http.get(url, {headers: this.headers}).pipe(
+    return this.http.get(`/read/${id}`, {headers: this.headers}).pipe(
       map((res: Response) => {
         return res || {}
       }),
@@ -43,7 +43,7 @@ export class ApiService {
 
   // Update vip
   updateVip(id, data): Observable<any> {
-    let url = `${this.baseUrl}/update/${id}`;
+    let url = `/update/${id}`;
     return this.http.put(url, data, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     )
@@ -51,7 +51,7 @@ export class ApiService {
 
   // Delete vip
   deleteVip(id): Observable<any> {
-    let url = `${this.baseUrl}/delete/${id}`;
+    let url = `/delete/${id}`;
     return this.http.delete(url, { headers: this.headers }).pipe(
       catchError(this.errorMgmt)
     )
