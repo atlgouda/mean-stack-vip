@@ -12,6 +12,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.db, {
    useNewUrlParser: true
 }).then(() => {
+      console.log(dbConfig.db)
       console.log('Database sucessfully connected')
    },
    error => {
@@ -29,7 +30,12 @@ app.use(bodyParser.urlencoded({
 app.use(cors())
 app.use(express.static(path.join(__dirname, '../dist/mean-vip-list')));
 console.log(__dirname)
+// app.get('/*', function(req, res) {
+//    res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
+// })
 app.use('/', express.static(path.join(__dirname, '../dist/mean-vip-list')));
+
+// app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
 
 
@@ -46,7 +52,20 @@ const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
   
 })
-
+//get User
+// app.get('/test', function (req, res) {
+//    Vip.findOne({ id: '5ed6982ff9f3d862688954c3' }, function (err, vip) {
+//       if (err) {
+//          res.send(err);
+//       } else {
+//          if (!vip) {
+//             res.send ('vip does not exist');
+//          } else {
+//             res.send(vip)
+//          }
+//       }
+//    })
+// })
 
 // // Find 404 and hand over to error handler
 app.use((req, res, next) => {

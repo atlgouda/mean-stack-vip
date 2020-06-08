@@ -6,7 +6,7 @@
     "npm": "6.14.x"
   },
   "scripts": {
-    "heroku-postbuild": "ng build --prod",   
+    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
     "start": "node backend/server.js",
     "build": "ng build",
@@ -27,6 +27,7 @@
     "ajv": "^6.8.1",
     "bootstrap": "^4.5.0",
     "cors": "^2.8.5",
+    "mongodb": "^3.5.8",
     "mongoose": "^5.9.17",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
