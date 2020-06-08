@@ -1504,7 +1504,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, ApiService);
 
         this.http = http;
-        this.baseUrl = "http://localhost:4000/api";
+        this.baseUrl = "http://localhost:8080/api";
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]().set('Content-Type', 'application/json');
       } // Create
 
@@ -1626,7 +1626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     var environment = {
       production: false,
-      baseUrl: 'http://localhost:4000/api'
+      baseUrl: 'http://localhost:8080/api'
     };
     /*
      * For easier debugging in development mode, you can import the following file
