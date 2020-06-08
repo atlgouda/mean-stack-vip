@@ -5,7 +5,7 @@ let express = require('express'),
    mongoose = require('mongoose'),
    cors = require('cors'),
    bodyParser = require('body-parser'),
-   dbConfig = require('./database/db');
+   dbConfig = require('./backend/database/db');
 
 // Connecting with mongo db
 mongoose.Promise = global.Promise;
@@ -20,19 +20,19 @@ mongoose.connect(dbConfig.db, {
 )
 
 // Setting up port with express js
-const vipRoute = require('../backend/routes/vip.route')
+const vipRoute = require('./backend/routes/vip.route')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
    extended: false
 }));
 app.use(cors())
-app.use(express.static(path.join(__dirname, '../dist/mean-vip-list')));
+app.use(express.static(path.join(__dirname, 'dist/mean-vip-list')));
 console.log(__dirname)
 // app.get('/*', function(req, res) {
 //    res.sendFile(path.join(__dirname, '../dist/mean-vip-list/index.html'));
 // })
-app.use('/', express.static(path.join(__dirname, '../dist/mean-vip-list')));
+app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-vip-list')));
 app.use('/api', vipRoute)
